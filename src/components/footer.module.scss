@@ -1,0 +1,44 @@
+@import "../styles/mixins.scss";
+@import "../styles/consts.scss";
+
+.layoutFooter {
+    nav ul {
+        @include listReset;
+    }
+
+    @include media-large1() {
+        margin-left: $menuWidth;
+    }
+}
+
+.links {}
+
+.copyrightInfo {
+    text-align: center;
+    line-height: 4rem;
+}
+
+.companyName {}
+
+.companyAddress {}
+
+.companyEmail {}
+
+.contactInfo {}
+
+.content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: $dark;
+    color: $darkText;
+
+    a {
+        color: $darkText;
+        transition: all 0.3s ease-in;
+    }
+
+    a:hover,
+    a:focus {
+        color: lighten($darkText, 20%);
+    }
+}
