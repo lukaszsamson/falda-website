@@ -1,5 +1,6 @@
 import React from "react"
 import headerStyles from "./header.module.scss"
+import { FaShoppingCart, FaSignInAlt } from 'react-icons/fa'
 
 export default () => (
   <header className={headerStyles.header}>
@@ -10,11 +11,11 @@ export default () => (
     />
     <div className={headerStyles.buttons}>
       <a>
-        <i />
+        <FaShoppingCart />
         <span>Koszyk</span>
       </a>
       <a>
-        <i />
+        <FaSignInAlt />
         <span>Zaloguj</span>
       </a>
     </div>

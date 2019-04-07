@@ -1,56 +1,95 @@
 @import "../styles/mixins.scss";
+@import "../styles/consts.scss";
 
 .wrap {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .menuOverlay {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9;
-    background-color: black;
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-    pointer-events: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+.menuShown {
+  & > nav {
+    transform: translateX(0);
+    z-index: 10;
+  }
+  .menuOverlay {
+    opacity: 0.7;
+    pointer-events: all;
+  }
 }
 
 .menuIcon {
-    position: fixed;
-    z-index: 11;
-    top: 1rem;
-    left: 1rem;
+  position: fixed;
+  z-index: 11;
+  top: 1rem;
+  left: 1rem;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  span {
+    display: none;
+  }
+
+  @include media-medium1() {
+    top: 1.5rem;
+  }
+
+  @include media-large1() {
+    display: none;
+  }
+
+  &:hover {
     background-color: transparent;
-    padding: 0;
-    cursor: pointer;
-    span {
-      display: none;
+  }
+
+  svg {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+
+    @include media-small2() {
+      width: 1.5rem;
+      height: 1.5rem;
     }
+
     @include media-medium1() {
-      top: 1.5rem;
-    }
-    @include media-large1() {
-      display: none;
-    }
-    &:hover {
-      background-color: transparent;
-    }
-    svg {
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      @include media-small2() {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-      @include media-medium1() {
-        width: 2rem;
-        height: 2rem;
-      }
+      width: 2rem;
+      height: 2rem;
     }
   }
+
+  @include media-large1() {
+    &.icon {
+      display: none;
+    }
+  }
+}
+
+.content {
+  & h1 {
+    text-align: center;
+    // margin-top: 2.5rem;
+  }
+
+  flex-grow: 1;
+
+  @include media-large1() {
+    margin-left: $menuWidth;
+  }
+}

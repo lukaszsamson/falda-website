@@ -1,44 +1,49 @@
 @import "../styles/mixins.scss";
 @import "../styles/consts.scss";
 
-.layoutFooter {
-    nav ul {
-        @include listReset;
-    }
+.footer {
+  nav ul {
+    @include listReset;
+  }
 
-    @include media-large1() {
-        margin-left: $menuWidth;
-    }
+  @include media-large1() {
+    margin-left: $menuWidth;
+  }
 }
 
-.links {}
+.links {
+}
 
 .copyrightInfo {
-    text-align: center;
-    line-height: 4rem;
+  text-align: center;
+  line-height: 4rem;
 }
 
-.companyName {}
+.companyName {
+}
 
-.companyAddress {}
+.companyAddress {
+}
 
-.companyEmail {}
+.companyEmail {
+}
 
-.contactInfo {}
+.contactInfo {
+}
 
 .content {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    background-color: $dark;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: $dark;
+  color: $darkText;
+
+  a {
     color: $darkText;
+    transition: all 0.3s ease-in;
+  }
 
-    a {
-        color: $darkText;
-        transition: all 0.3s ease-in;
-    }
-
-    a:hover,
-    a:focus {
-        color: lighten($darkText, 20%);
-    }
+  a:hover,
+  a:focus {
+    color: lighten($darkText, 20%);
+  }
 }

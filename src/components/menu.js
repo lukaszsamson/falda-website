@@ -1,12 +1,13 @@
 import React from "react"
 import menuStyles from "./menu.module.scss"
 import { Link } from "gatsby"
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 export default () => (
   <nav className={menuStyles.menu}>
-    <h5 class="seo">Menu główne</h5>
+    <h5 className="seo">Menu główne</h5>
     <div className={menuStyles.logo}>
-      <Link href="/" title="Strona główna">
+      <Link to="/" title="Strona główna">
         <img src="/img/logo/Falda_logo_vertical_black.svg" alt="Logo Falda" />
       </Link>
     </div>
@@ -22,17 +23,17 @@ export default () => (
     </ul>
 
     <section className={menuStyles.social}>
-      <h3 class="seo">
+      <h3 className="seo">
         Odnośniki do profili Falda na portalach społecznościowych
       </h3>
       <a>
-        <i />
+      <FaFacebook />
       </a>
       <a>
-        <i />
+      <FaInstagram />
       </a>
       <a>
-        <i />
+      <FaTwitter />
       </a>
     </section>
   </nav>
