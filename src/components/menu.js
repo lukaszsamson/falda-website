@@ -12,8 +12,8 @@ export default () => (
       </Link>
     </div>
     <ul>
-      <li>Kim jesteśmy</li>
-      <li>Nasza kolekcja</li>
+      <Link to="/about">Kim jesteśmy</Link>
+      <Link to="/products">Nasza kolekcja</Link>
       <li>Zaprojektuj własną spódnicę</li>
       <li>Tkaniny i dodatki</li>
       <li>Warunki zakupów</li>
