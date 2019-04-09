@@ -3,7 +3,7 @@ import footerStyles from "./footer.module.scss"
 
 export default () => (
   <footer className={footerStyles.footer}>
-    <div className={footerStyles.content + ' ' + 'grid3 container'}>
+    <div className={footerStyles.content + ' grid3 container'}>
       <section>
         <address className={footerStyles.contactInfo}>
           <h3 className="seo">Informacje kontaktowe</h3>
