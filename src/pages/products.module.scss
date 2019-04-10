@@ -1,0 +1,32 @@
+.productsItemLabel {
+  text-align: center;
+}
+
+.simpleMessage {
+  text-align: center;
+}
+
+$productsItemHeight: 40vh;
+.productsItem {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  & a {
+    max-height: $productsItemHeight;
+  }
+  transition: all 0.3s ease-out;
+  &:hover {
+    background: rgba(0, 0, 0, 0.075);
+  }
+}
+
+.productsSearch {
+  padding: 1.25rem;
+  & input {
+    width: 100%;
+  }
+}
+
+.searchResults {
+  margin: 0;
+}
