@@ -5,7 +5,7 @@ import productsStyles from "../pages/products.module.scss"
 
 export default ({ product }) => (
   <article>
-    <Link to={"/products/" + product.slug}>
+    <Link to={"/produkty/" + product.slug}>
       <Img fluid={product.images[0].fluid} />
     </Link>
     <h2 className={productsStyles.productsItemLabel}>{product.name}</h2>
