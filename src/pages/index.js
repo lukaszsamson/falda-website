@@ -8,7 +8,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 
 export default ({ data }) => (
   <Layout>
-    <HelmetDatoCms seo={data.datoCmsHomePage.seoMetaTags} />
+    <HelmetDatoCms seo={data.datoCmsHomePage.seoMetaTags}><html lang="pl_PL" /></HelmetDatoCms>
     <header className={indexStyles.homeHeader}>
       <div className={indexStyles.homeHeaderImage}>
       <Img fluid={data.datoCmsHomePage.headerImage.fluid} />

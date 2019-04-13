@@ -6,7 +6,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 export default ({data}) => (
   <Layout>
     <article className="sheet">
-      <HelmetDatoCms seo={data.datoCmsInfo.seoMetaTags} />
+      <HelmetDatoCms seo={data.datoCmsInfo.seoMetaTags}><html lang="pl_PL" /></HelmetDatoCms>
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsInfo.name}</h1>
         <div
