@@ -29,6 +29,9 @@ export const query = graphql`
           html
         }
       }
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
     }
   }
 `
