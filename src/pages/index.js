@@ -1,12 +1,69 @@
 import React from "react"
 import Layout from "../components/layout"
+import { graphql } from "gatsby"
+import HomeItem from "../components/homeItem"
+import indexStyles from "./index.module.scss"
+import Img from "gatsby-image"
+import { HelmetDatoCms } from 'gatsby-source-datocms'
 
-export default () => (
+export default ({ data }) => (
   <Layout>
-    <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
-    <p>
-      What do I like to do? Lots of course but definitely enjoy building
-      websites.
-    </p>
+    <HelmetDatoCms seo={data.datoCmsHomePage.seoMetaTags} />
+    <header className={indexStyles.homeHeader}>
+      <div className={indexStyles.homeHeaderImage}>
+      <Img fluid={data.datoCmsHomePage.headerImage.fluid} />
+      </div>
+      <div className={indexStyles.homeHeaderText}>
+        <h1 className="seo">Strona główna</h1>
+        <div
+        dangerouslySetInnerHTML={{
+          __html: data.datoCmsHomePage.headerTextNode.childMarkdownRemark.html,
+        }}
+        />
+      </div>
+    </header>
+    {data.datoCmsHomePage.items.map(item => (
+      <HomeItem
+        key={item.id}
+        caption={item.captionNode}
+        linkCaption={item.linkCaption}
+        link={""}
+        image={item.image}
+      />
+    ))}
   </Layout>
 )
+
+export const query = graphql`
+  {
+    datoCmsHomePage {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+      headerTextNode {
+        childMarkdownRemark {
+          html
+        }
+      }
+      headerImage {
+        fluid {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      items {
+        id
+        captionNode {
+          childMarkdownRemark {
+            html
+          }
+        }
+        linkCaption
+        image {
+          fluid {
+            ...GatsbyDatoCmsSizes
+          }
+        }
+      }
+    }
+  }
+`
