@@ -6,21 +6,19 @@ import Layout from "../components/layout"
 
 const About = ({ data: { about } }) => (
   <Layout>
-    <article className="sheet">
+    <article className="container">
       <HelmetDatoCms seo={about.seoMetaTags}><html lang="pl_PL" /></HelmetDatoCms>
-      <div className="sheet__inner">
-        <h1 className="sheet__title">{about.title}</h1>
-        <p className="sheet__lead">{about.subtitle}</p>
-        <div className="sheet__gallery">
+        <h1>{about.title}</h1>
+        <p>{about.subtitle}</p>
+        {/* <div className="sheet__gallery">
           <img src={about.photo.url} />
-        </div>
+        </div> */}
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
             __html: about.bioNode.childMarkdownRemark.html,
           }}
         />
-      </div>
     </article>
   </Layout>
 )

@@ -5,17 +5,15 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 
 export default ({data}) => (
   <Layout>
-    <article className="sheet">
+    <article className="container">
       <HelmetDatoCms seo={data.datoCmsInfo.seoMetaTags}><html lang="pl_PL" /></HelmetDatoCms>
-      <div className="sheet__inner">
-        <h1 className="sheet__title">{data.datoCmsInfo.name}</h1>
-        <div
-          className="sheet__body"
-          dangerouslySetInnerHTML={{
-            __html: data.datoCmsInfo.contentNode.childMarkdownRemark.html,
-          }}
-        />
-      </div>
+      <h1>{data.datoCmsInfo.name}</h1>
+      <div
+        className="sheet__body"
+        dangerouslySetInnerHTML={{
+          __html: data.datoCmsInfo.contentNode.childMarkdownRemark.html,
+        }}
+      />
     </article>
   </Layout>
 )

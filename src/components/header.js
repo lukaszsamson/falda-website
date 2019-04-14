@@ -9,7 +9,7 @@ export default () => (
       className={headerStyles.logo}
       alt="Logo firmy Falda"
     />
-    <div className={headerStyles.buttons}>
+    {/* <div className={headerStyles.buttons}>
       <a>
         <FaShoppingCart />
         <span>Koszyk</span>
@@ -18,6 +18,6 @@ export default () => (
         <FaSignInAlt />
         <span>Zaloguj</span>
       </a>
-    </div>
+    </div> */}
   </header>
 )

@@ -4,6 +4,7 @@
 .footer {
   nav ul {
     @include listReset;
+    margin-left: 0;
   }
 
   @include media-large1() {

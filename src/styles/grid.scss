@@ -1,8 +1,8 @@
 @import "./mixins.scss";
 
 .container {
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .grid3 {
@@ -29,6 +29,10 @@
   .grid5 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 @include media-medium1() {
   .grid3 {
@@ -49,6 +53,10 @@
       grid-column: span 3;
     }
   }
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 @include media-medium2() {
   .grid5 {
@@ -59,5 +67,9 @@
     & .thinColumn {
       grid-column: span 2;
     }
+  }
+  .container {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }

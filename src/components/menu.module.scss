@@ -37,6 +37,7 @@
 
   & ul {
     @include listReset;
+    margin-left: 0;
 
     li {
       display: flex;

@@ -40,14 +40,21 @@
   background-color: transparent;
   padding: 0;
   border: none;
+  height: 1.5rem;
   cursor: pointer;
 
   span {
     display: none;
   }
 
+  @include media-small2() {
+    height: 2rem;
+    width: 2rem;
+  }
+
   @include media-medium1() {
-    top: 1.5rem;
+    top: 2rem;
+    // height: 1.rem;
   }
 
   @include media-large1() {
@@ -92,4 +99,5 @@
   @include media-large1() {
     margin-left: $menuWidth;
   }
+  margin-bottom: 2rem;
 }
