@@ -1,6 +1,6 @@
 import React from "react"
 import headerStyles from "./header.module.scss"
-import { FaShoppingCart, FaSignInAlt } from 'react-icons/fa'
+// import { FaShoppingCart, FaSignInAlt } from 'react-icons/fa'
 
 export default () => (
   <header className={headerStyles.header}>

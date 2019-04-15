@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import Product from "../components/product"
 import { graphql } from "gatsby"
-import productsStyles from "./products.module.scss"
+import produktyStyles from "./produkty.module.scss"
 
 function maybeSerachResults(data, nameFilter) {
   const filtered = data.allDatoCmsProduct.edges.filter(
@@ -11,15 +11,15 @@ function maybeSerachResults(data, nameFilter) {
   )
   if (filtered.length === 0) {
     return (
-      <div className={productsStyles.simpleMessage}>
+      <div className={produktyStyles.simpleMessage}>
         Brak wyników dla <i>{nameFilter}</i>.
       </div>
     )
   } else {
     return (
-      <ul className={productsStyles.searchResults + " grid3"}>
+      <ul className={produktyStyles.searchResults + " grid3"}>
         {filtered.map(({ node: product }) => (
-          <li key={product.id} className={productsStyles.productsItem}>
+          <li key={product.id} className={produktyStyles.productsItem}>
             <Product product={product} />
           </li>
         ))}
@@ -34,7 +34,7 @@ export default ({ data }) => {
     <Layout>
       <h1>Nasza kolekcja</h1>
       <div>
-        <div className={productsStyles.productsSearch + " grid3"}>
+        <div className={produktyStyles.productsSearch + " grid3"}>
           <div className="centeredColumn">
             <input
               type="text"

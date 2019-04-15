@@ -26,7 +26,6 @@ async function createProducts(graphql, createPage) {
   result.data.allDatoCmsProduct.edges.forEach(function({
     node: product,
   }) {
-    console.log(product)
     createPage({
       path: `produkty/${product.slug}`,
       component: path.resolve(`./src/templates/product.js`),
@@ -53,7 +52,6 @@ async function createInfos(graphql, createPage) {
   result.data.allDatoCmsInfo.edges.forEach(function({
     node: info,
   }) {
-    console.log(info)
     createPage({
       path: `informacje/${info.slug}`,
       component: path.resolve(`./src/templates/info.js`),
@@ -66,7 +64,6 @@ async function createInfos(graphql, createPage) {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  console.log("createPages")
 
   await createProducts(graphql, createPage)
   await createInfos(graphql, createPage)

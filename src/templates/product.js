@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { HelmetDatoCms } from "gatsby-source-datocms"
 import productStyles from "./product.module.scss"
 import Img from "gatsby-image"
