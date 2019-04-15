@@ -1,6 +1,6 @@
 import React from "react"
 import menuStyles from "./menu.module.scss"
-import { Link, StaticQuery } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 
 function render(data) {
