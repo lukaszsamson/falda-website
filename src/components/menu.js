@@ -14,7 +14,7 @@ function render(data) {
       </div>
       <ul>
         {data.datoCmsHomePage.menu.map((item) => (
-          <li>
+          <li key={item.link}>
             <Link to={item.link}>{item.label}</Link>
           </li>
         ))}
