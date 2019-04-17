@@ -32,6 +32,7 @@ export default ({ data }) => {
   const [nameFilter, setNameFilter] = useState("")
   return (
     <Layout>
+      <section>
       <h1>Nasza kolekcja</h1>
       <div>
         <div className={produktyStyles.productsSearch + " grid3"}>
@@ -47,6 +48,7 @@ export default ({ data }) => {
         </div>
         {maybeSerachResults(data, nameFilter)}
       </div>
+      </section>
     </Layout>
   )
 }

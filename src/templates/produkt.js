@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { HelmetDatoCms } from "gatsby-source-datocms"
-import productStyles from "./product.module.scss"
+import produktStyles from "./produkt.module.scss"
 import Img from "gatsby-image"
 import { FaSearchPlus } from "react-icons/fa"
 
@@ -16,32 +16,14 @@ export default ({ data }) => {
       </HelmetDatoCms>
 
       <article className="grid5">
-        <section className={"wideColumn " + productStyles.productImages}>
-          <div className={productStyles.productMainImage}>
-            <Img fluid={data.datoCmsProduct.images[selectedImage].fluid} />
-            <button
-              className={productStyles.zoomLink}
-              onClick={() => setZoom(true)}
-            >
-              <FaSearchPlus />
-            </button>
-          </div>
-          {data.datoCmsProduct.images.map((image, index) => (
-            <div
-              key={index}
-              className={productStyles.productThumbnail}
-              onClick={() => setSelectedImage(index)}
-            >
-              <Img fluid={image.fluid} />
-            </div>
-          ))}
-        </section>
-        <section className={productStyles.productDetails + " thinColumn"}>
+        
+        <div className={produktStyles.productDetails + " thinColumn"}>
           <header>
             <h1>{data.datoCmsProduct.name}</h1>
             <small>{data.datoCmsProduct.code}</small>
           </header>
-          <section className={productStyles.productPrice}>
+          <section className={produktStyles.productPrice}>
+          <h3 className="seo">Cena</h3>
             {data.datoCmsProduct.price} zł
           </section>
           <section>
@@ -69,12 +51,33 @@ export default ({ data }) => {
               </article>
             ))}
           </section>
+        </div>
+        <section className={"wideColumn " + produktStyles.productImages}>
+          <h2 className="seo">Zdjęcia sukienki</h2>
+          <div className={produktStyles.productMainImage}>
+            <Img fluid={data.datoCmsProduct.images[selectedImage].fluid} />
+            <button
+              className={produktStyles.zoomLink}
+              onClick={() => setZoom(true)}
+            >
+              <FaSearchPlus />
+            </button>
+          </div>
+          {data.datoCmsProduct.images.map((image, index) => (
+            <div
+              key={index}
+              className={produktStyles.productThumbnail}
+              onClick={() => setSelectedImage(index)}
+            >
+              <Img fluid={image.fluid} />
+            </div>
+          ))}
         </section>
       </article>
 
       {zoom && (
         <div
-          className={productStyles.imageZoomContainer}
+          className={produktStyles.imageZoomContainer}
           onClick={() => setZoom(false)}
         >
           <Img fluid={data.datoCmsProduct.images[selectedImage].fluid} />

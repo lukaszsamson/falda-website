@@ -17,7 +17,7 @@ export default ({ children }) => {
         </button>
         <div className={layoutStyles.menuOverlay} onClick={() => setMenuShown(false)}/>
       </div>
-      <section className={layoutStyles.content}>{children}</section>
+      <div className={layoutStyles.content}>{children}</div>
       <Footer />
     </div>
   )

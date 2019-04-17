@@ -9,12 +9,13 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 export default ({ data }) => (
   <Layout>
     <HelmetDatoCms seo={data.datoCmsHomePage.seoMetaTags}><html lang="pl_PL" /></HelmetDatoCms>
+    <section>
     <header className={indexStyles.homeHeader}>
       <div className={indexStyles.homeHeaderImage}>
       <Img fluid={data.datoCmsHomePage.headerImage.fluid} />
       </div>
       <div className={indexStyles.homeHeaderText}>
-        <h1 className="seo">Strona główna</h1>
+        <h1 className="seo">Strona główna Falda</h1>
         <div
         dangerouslySetInnerHTML={{
           __html: data.datoCmsHomePage.headerTextNode.childMarkdownRemark.html,
@@ -31,6 +32,7 @@ export default ({ data }) => (
         image={item.image}
       />
     ))}
+    </section>
   </Layout>
 )
 

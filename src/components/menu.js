@@ -6,7 +6,10 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 function render(data) {
   return (
     <nav className={menuStyles.menu}>
-      <h5 className="seo">Menu główne</h5>
+      <h2 className="seo">Menu główne</h2>
+      <h3 className="seo">
+          Linki do podstron
+      </h3>
       <div className={menuStyles.logo}>
         <Link to="/" title="Strona główna">
           <img src="/img/logo/Falda_logo_vertical_black.svg" alt="Logo Falda" />
