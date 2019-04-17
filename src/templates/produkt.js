@@ -13,17 +13,20 @@ export default ({ data }) => {
     <Layout>
       <HelmetDatoCms seo={data.datoCmsProduct.seoMetaTags}>
         <html lang="pl_PL" />
+        <link
+          rel="canonical"
+          href={"https://falda.pl/produkty/" + data.datoCmsProduct.slug}
+        />
       </HelmetDatoCms>
 
       <article className="grid5">
-        
         <div className={produktStyles.productDetails + " thinColumn"}>
           <header>
             <h1>{data.datoCmsProduct.name}</h1>
             <small>{data.datoCmsProduct.code}</small>
           </header>
           <section className={produktStyles.productPrice}>
-          <h3 className="seo">Cena</h3>
+            <h3 className="seo">Cena</h3>
             {data.datoCmsProduct.price} zł
           </section>
           <section>

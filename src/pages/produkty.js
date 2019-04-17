@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Product from "../components/product"
 import { graphql } from "gatsby"
 import produktyStyles from "./produkty.module.scss"
+import { HelmetDatoCms } from "gatsby-source-datocms"
 
 function maybeSerachResults(data, nameFilter) {
   const filtered = data.allDatoCmsProduct.edges.filter(
@@ -32,6 +33,11 @@ export default ({ data }) => {
   const [nameFilter, setNameFilter] = useState("")
   return (
     <Layout>
+      {/* TODO */}
+      <HelmetDatoCms seo={data.seoMetaTags}>
+        <html lang="pl_PL" />
+        <link rel="canonical" href="https://falda.pl/produkty" />
+      </HelmetDatoCms>
       <section>
       <h1>Nasza kolekcja</h1>
       <div>

@@ -1,12 +1,18 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { HelmetDatoCms } from 'gatsby-source-datocms'
+import { HelmetDatoCms } from "gatsby-source-datocms"
 
-export default ({data}) => (
+export default ({ data }) => (
   <Layout>
     <article className="container">
-      <HelmetDatoCms seo={data.datoCmsInfo.seoMetaTags}><html lang="pl_PL" /></HelmetDatoCms>
+      <HelmetDatoCms seo={data.datoCmsInfo.seoMetaTags}>
+        <html lang="pl_PL" />
+        <link
+          rel="canonical"
+          href={"https://falda.pl/informacje/" + data.datoCmsInfo.slug}
+        />
+      </HelmetDatoCms>
       <h1>{data.datoCmsInfo.name}</h1>
       <div
         className="sheet__body"
@@ -22,6 +28,7 @@ export const query = graphql`
   query InfoQuery($slug: String!) {
     datoCmsInfo(slug: { eq: $slug }) {
       name
+      slug
       contentNode {
         childMarkdownRemark {
           html
