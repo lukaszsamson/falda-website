@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://falda.netlify.com/*"
+  to = "https://falda.pl/:splat"
+  status = 301
+  force = true
