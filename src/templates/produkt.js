@@ -111,10 +111,7 @@ export const query = graphql`
       }
       build {
         name
-        values {
-          name
-          percentage
-        }
+        values
       }
     }
   }
