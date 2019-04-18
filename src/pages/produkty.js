@@ -6,7 +6,7 @@ import produktyStyles from "./produkty.module.scss"
 import { HelmetDatoCms } from "gatsby-source-datocms"
 
 function maybeSerachResults(data, nameFilter) {
-  const filtered = data.allDatoCmsProduct.edges.filter(
+  const filtered = data.products.edges.filter(
     ({ node: product }) =>
       nameFilter === "" || product.name.includes(nameFilter)
   )
@@ -34,12 +34,12 @@ export default ({ data }) => {
   return (
     <Layout>
       {/* TODO */}
-      <HelmetDatoCms seo={data.seoMetaTags}>
+      <HelmetDatoCms seo={data.info.seoMetaTags}>
         <html lang="pl_PL" />
         <link rel="canonical" href="https://falda.pl/produkty" />
       </HelmetDatoCms>
       <section>
-      <h1>Nasza kolekcja</h1>
+      <h1>{data.title}</h1>
       <div>
         <div className={produktyStyles.productsSearch + " grid3"}>
           <div className="centeredColumn">
@@ -61,7 +61,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query ProductsQuery {
-    allDatoCmsProduct(sort: { fields: [name], order: ASC }) {
+    products: allDatoCmsProduct(sort: { fields: [name], order: ASC }) {
       edges {
         node {
           id
@@ -73,6 +73,12 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    info: datoCmsProductsPage {
+      title
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
     }
   }
