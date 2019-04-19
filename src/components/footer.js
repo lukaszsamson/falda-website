@@ -19,17 +19,22 @@ function render(data) {
             <h3 className="seo">Informacje kontaktowe</h3>
             <div className={footerStyles.companyName}>
               <h4 className="seo">Nazwa firmy</h4>
-              Falda
+              <p>{data.home.contactInfo[0].name}</p>
             </div>
             <div className={footerStyles.companyAddress}>
               <h4 className="seo">Adres</h4>
-              Ulica 123/45
-              <br />
-              12-123 Miasto
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.home.contactInfo[0].addressNode.childMarkdownRemark.html,
+                }}
+              >
+              </div>
             </div>
             <div className={footerStyles.companyEmail}>
               <h4 className="seo">Adres email</h4>
-              <a href="mailto:kontakt@falda.pl">kontakt@falda.pl</a>
+              <a href={"mailto:" + data.home.contactInfo[0].email}>
+                {data.home.contactInfo[0].email}
+              </a>
             </div>
           </address>
         </section>
@@ -51,12 +56,23 @@ export default () => (
   <StaticQuery
     query={graphql`
       query InfosQuery {
-        allDatoCmsInfo(sort: { fields: [name], order: ASC }) {
+        allDatoCmsInfo: allDatoCmsInfo(sort: { fields: [name], order: ASC }) {
           edges {
             node {
               name
               slug
             }
+          }
+        }
+        home: datoCmsHomePage {
+          contactInfo {
+            name
+            addressNode {
+              childMarkdownRemark {
+                html
+              }
+            }
+            email
           }
         }
       }
