@@ -3,6 +3,8 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Falda`,
+    siteUrl: `https://falda.pl`,
+    // TODO? more props
   },
   plugins: [
     {
@@ -48,5 +50,6 @@ module.exports = {
         // cookieDomain: "falda.pl",
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 }
