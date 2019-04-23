@@ -19,6 +19,7 @@ export default ({ data }) => {
         />
       </HelmetDatoCms>
 
+      {!zoom && (
       <article className="grid5">
         <div className={produktStyles.productDetails + " thinColumn"}>
           <header>
@@ -27,7 +28,7 @@ export default ({ data }) => {
           </header>
           <section className={produktStyles.productPrice}>
             <h3 className="seo">Cena</h3>
-            {data.datoCmsProduct.price} zł
+            <span>{data.datoCmsProduct.price}</span> <span>PLN</span>
           </section>
           <section>
             <h2>Opis</h2>
@@ -61,9 +62,10 @@ export default ({ data }) => {
             <Img fluid={data.datoCmsProduct.images[selectedImage].fluid} />
             <button
               className={produktStyles.zoomLink}
+              style={{padding: "0", margin: "5px"}}
               onClick={() => setZoom(true)}
             >
-              <FaSearchPlus />
+              <FaSearchPlus style={{width: "50px", height: "50px"}}/>
             </button>
           </div>
           {data.datoCmsProduct.images.map((image, index) => (
@@ -77,6 +79,7 @@ export default ({ data }) => {
           ))}
         </section>
       </article>
+      )}
 
       {zoom && (
         <div
