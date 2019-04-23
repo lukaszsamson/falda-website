@@ -9,7 +9,20 @@ import { FaSearchPlus } from "react-icons/fa"
 export default ({ data }) => {
   const [selectedImage, setSelectedImage] = useState(0)
   const [zoom, setZoom] = useState(false)
-
+  // TODO refactor
+  // https://github.com/nfl/react-helmet/issues/437
+  // const upHandler = ({ key }) => {
+  //   console.log(key)
+  // }
+  // useEffect(() => {
+  //   console.log("a")
+  //   window.addEventListener('keyup', upHandler);
+  //   return () => {
+  //     debugger
+  //     console.log("b")
+  //     window.removeEventListener('keyup', upHandler)
+  //   }
+  // }, []) // Empty array ensures that effect is only run on mount and unmount
   return (
     <Layout>
       <HelmetDatoCms seo={data.datoCmsProduct.seoMetaTags}>
