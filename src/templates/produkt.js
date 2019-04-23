@@ -9,6 +9,7 @@ import { FaSearchPlus } from "react-icons/fa"
 export default ({ data }) => {
   const [selectedImage, setSelectedImage] = useState(0)
   const [zoom, setZoom] = useState(false)
+
   return (
     <Layout>
       <HelmetDatoCms seo={data.datoCmsProduct.seoMetaTags}>
