@@ -1,7 +1,8 @@
 import React from "react"
 import menuStyles from "./menu.module.scss"
 import { Link, StaticQuery, graphql } from "gatsby"
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
+import { FaFacebook, /* FaInstagram, FaTwitter */ } from "react-icons/fa"
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 function render(data) {
   return (
@@ -27,15 +28,15 @@ function render(data) {
         <h3 className="seo">
           Odnośniki do profili Falda na portalach społecznościowych
         </h3>
-        <a href="#TODO">
+        <OutboundLink href={data.datoCmsSite.globalSeo.facebookPageUrl} title="Strona Falda na Facebook'u">
           <FaFacebook />
-        </a>
-        <a href="#TODO">
+        </OutboundLink>
+        {/* <a href="#TODO">
           <FaInstagram />
         </a>
         <a href="#TODO">
           <FaTwitter />
-        </a>
+        </a> */}
       </section>
     </nav>
   )
@@ -49,6 +50,11 @@ export default () => (
           menu {
             link
             label
+          }
+        }
+        datoCmsSite {
+          globalSeo {
+            facebookPageUrl
           }
         }
       }
