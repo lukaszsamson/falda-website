@@ -5,6 +5,11 @@
   padding-right: 1rem;
 }
 
+.withMargin {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .grid3 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);

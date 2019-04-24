@@ -3,22 +3,22 @@ import { graphql } from "gatsby"
 import { HelmetDatoCms } from "gatsby-source-datocms"
 import Layout from "../components/layout"
 
-export default ({ data: { about } }) => (
+export default ({ data: { customization } }) => (
   <Layout>
     <article className="container withMargin">
-      <HelmetDatoCms seo={about.seoMetaTags}>
+      <HelmetDatoCms seo={customization.seoMetaTags}>
         <html lang="pl_PL" />
-        <link rel="canonical" href="https://falda.pl/o_nas" />
+        <link rel="canonical" href="https://falda.pl/personalizacja" />
       </HelmetDatoCms>
-      <h1>{about.title}</h1>
-      <p>{about.subtitle}</p>
+      <h1>{customization.title}</h1>
+      <p>{customization.subtitle}</p>
       {/* <div className="sheet__gallery">
           <img src={about.photo.url} />
         </div> */}
       <div
         className="sheet__body"
         dangerouslySetInnerHTML={{
-          __html: about.bioNode.childMarkdownRemark.html,
+          __html: customization.bioNode.childMarkdownRemark.html,
         }}
       />
     </article>
@@ -26,16 +26,13 @@ export default ({ data: { about } }) => (
 )
 
 export const query = graphql`
-  query AboutQuery {
-    about: datoCmsAboutPage {
+  query CustomizationQuery {
+    customization: datoCmsCustomizationPage {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
       subtitle
-      photo {
-        url
-      }
       bioNode {
         childMarkdownRemark {
           html
