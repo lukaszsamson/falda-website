@@ -65,6 +65,13 @@
     background-color: transparent;
   }
 
+  transition: all 0.3s ease-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+  }
+
   svg {
     display: block;
     width: 1rem;
@@ -99,5 +106,5 @@
   @include media-large1() {
     margin-left: $menuWidth;
   }
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 }

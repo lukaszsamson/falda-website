@@ -5,7 +5,7 @@ import { HelmetDatoCms } from "gatsby-source-datocms"
 
 export default ({ data }) => (
   <Layout>
-    <article className="container">
+    <article className="container" style={{"margin-top": "4rem", "margin-bottom": "4rem"}}>
       <HelmetDatoCms seo={data.datoCmsInfo.seoMetaTags}>
         <html lang="pl_PL" />
         <link

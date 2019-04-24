@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 const About = ({ data: { about } }) => (
   <Layout>
-    <article className="container">
+    <article className="container" style={{"margin-top": "4rem", "margin-bottom": "4rem"}}>
       <HelmetDatoCms seo={about.seoMetaTags}>
         <html lang="pl_PL" />
         <link rel="canonical" href="https://falda.pl/o_nas" />
