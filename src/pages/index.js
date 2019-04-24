@@ -15,16 +15,10 @@ export default ({ data }) => (
     <section>
       <header className={indexStyles.homeHeader}>
         <div className={indexStyles.homeHeaderImage}>
-          <Img fluid={data.datoCmsHomePage.headerImage.fluid} />
+          <Img title={data.datoCmsHomePage.headerImage.title} alt={data.datoCmsHomePage.headerImage.alt} fluid={data.datoCmsHomePage.headerImage.fluid} />
         </div>
         <div className={indexStyles.homeHeaderText}>
           <h1 className="seo">Strona główna Falda</h1>
-          <div
-            dangerouslySetInnerHTML={{
-              __html:
-                data.datoCmsHomePage.headerTextNode.childMarkdownRemark.html,
-            }}
-          />
         </div>
       </header>
       {data.datoCmsHomePage.items.map(item => (
@@ -32,7 +26,7 @@ export default ({ data }) => (
           key={item.id}
           caption={item.captionNode}
           linkCaption={item.linkCaption}
-          link={""}
+          link={item.link}
           image={item.image}
         />
       ))}
@@ -46,12 +40,10 @@ export const query = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
-      headerTextNode {
-        childMarkdownRemark {
-          html
-        }
-      }
       headerImage {
+        alt
+        title
+        createdAt
         fluid {
           ...GatsbyDatoCmsSizes
         }
@@ -63,6 +55,7 @@ export const query = graphql`
             html
           }
         }
+        link
         linkCaption
         image {
           fluid {
