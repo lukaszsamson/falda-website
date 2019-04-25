@@ -50,20 +50,20 @@
   }
 }
 
-.navItem:last-child {
-  &>:first-child {
-    background-color: transparent;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    z-index: 1;
-  }
+// .navItem:last-child {
+//   &>:first-child {
+//     background-color: transparent;
+//     grid-column: 1/2;
+//     grid-row: 1/2;
+//     z-index: 1;
+//   }
 
-  &>:last-child {
-    grid-column: 1/3;
-    grid-row: 1/2;
-    z-index: 0;
-  }
-}
+//   &>:last-child {
+//     grid-column: 1/3;
+//     grid-row: 1/2;
+//     z-index: 0;
+//   }
+// }
 
 .navItemCaption {
   background-color: $gray;
