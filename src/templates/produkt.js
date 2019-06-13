@@ -29,7 +29,7 @@ export default ({ data }) => {
         <html lang="pl_PL" />
         <link
           rel="canonical"
-          href={"https://falda.pl/produkty/" + data.datoCmsProduct.slug}
+          href={"https://falda.pl/kolekcja/" + data.datoCmsProduct.slug}
         />
       </HelmetDatoCms>
 

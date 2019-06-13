@@ -27,7 +27,7 @@ async function createProducts(graphql, createPage) {
     node: product,
   }) {
     createPage({
-      path: `produkty/${product.slug}`,
+      path: `kolekcja/${product.slug}`,
       component: path.resolve(`./src/templates/produkt.js`),
       context: {
         slug: product.slug,

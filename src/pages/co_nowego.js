@@ -8,7 +8,7 @@ export default ({ data: { lookbook } }) => (
     <article className="container withMargin">
       <HelmetDatoCms seo={lookbook.seoMetaTags}>
         <html lang="pl_PL" />
-        <link rel="canonical" href="https://falda.pl/lookbook" />
+        <link rel="canonical" href="https://falda.pl/co_nowego" />
       </HelmetDatoCms>
       <h1>{lookbook.title}</h1>
       <p>{lookbook.subtitle}</p>
@@ -18,8 +18,8 @@ export default ({ data: { lookbook } }) => (
 )
 
 export const query = graphql`
-  query LookbookQuery {
-    lookbook: datoCmsLookbookPage {
+  query NewsQuery {
+    lookbook: datoCmsNewsPage {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }

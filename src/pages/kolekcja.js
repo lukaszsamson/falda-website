@@ -36,7 +36,7 @@ export default ({ data }) => {
       {/* TODO */}
       <HelmetDatoCms seo={data.info.seoMetaTags}>
         <html lang="pl_PL" />
-        <link rel="canonical" href="https://falda.pl/produkty" />
+        <link rel="canonical" href="https://falda.pl/kolekcja" />
       </HelmetDatoCms>
       <section>
       <h1>{data.title}</h1>
