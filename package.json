@@ -24,7 +24,7 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sitemap": "^2.0.12",
     "gatsby-plugin-typography": "^2.2.10",
-    "gatsby-source-datocms": "^2.0.2",
+    "gatsby-source-datocms": "=2.1.5",
     "gatsby-transformer-remark": "^2.3.8",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
