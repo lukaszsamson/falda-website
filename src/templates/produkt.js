@@ -69,6 +69,14 @@ export default ({ data }) => {
               </article>
             ))}
           </section>
+          <section>
+            <h3>Dostępne rozmiary</h3>
+            <ul className={produktStyles.productSizes}>
+              {data.datoCmsProduct.sizes.map(({ size }) => (
+                <li key={size}>{size}</li>
+              ))}
+            </ul>
+          </section>
         </div>
         <section className={"wideColumn " + produktStyles.productImages}>
           <h2 className="seo">Zdjęcia sukienki</h2>
@@ -114,6 +122,9 @@ export const query = graphql`
       code
       price
       length
+      sizes {
+        size
+      }
       descriptionNode {
         childMarkdownRemark {
           html

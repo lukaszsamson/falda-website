@@ -51,6 +51,11 @@
   }
 }
 
+ul.productSizes { list-style: none; margin: 0; padding: 0; }
+ul.productSizes li { display: inline; }
+ul.productSizes li:after { content: ", "; }
+ul.productSizes li:last-child:after { content: ""; }
+
 .productLength {
   margin-bottom: 0;
 }
