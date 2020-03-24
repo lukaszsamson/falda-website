@@ -29,17 +29,30 @@
 
 .productDetails {
   padding: 1.25rem;
+  h4, h5 {
+    margin-top: 0.79rem;
+  }
   dl {
     display: grid;
     grid-template-columns: 6rem 3rem;
-
+    margin-bottom: 0;
+  }
+  dt {
+    font-weight: 550;
+    font-size: medium;
   }
   dt:after {
     content: ":";
   }
   dd {
     text-align: right;
+    margin-bottom: 0;
+    font-size: medium;
   }
+}
+
+.productLength {
+  margin-bottom: 0;
 }
 
 .zoomLink {

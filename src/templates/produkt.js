@@ -52,12 +52,12 @@ export default ({ data }) => {
                   data.datoCmsProduct.descriptionNode.childMarkdownRemark.html,
               }}
             />
-            <h3>Długość</h3>
-            <p>{data.datoCmsProduct.length}<small>cm</small></p>
-            <h3>Skład</h3>
+            <h4>Długość</h4>
+            <p className={produktStyles.productLength}>{data.datoCmsProduct.length}<small>cm</small></p>
+            <h4>Skład</h4>
             {data.datoCmsProduct.build.map(part => (
               <article key={part.name}>
-                <h4>{part.name}</h4>
+                <h5>{part.name}</h5>
                 <dl>
                   {part.values.map(({ name, percentage }) => (
                     <React.Fragment key={name}>
