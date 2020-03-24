@@ -5,6 +5,7 @@ import produktyStyles from "../pages/produkty.module.scss"
 
 export default ({ fabric }) => (
   <article>
+    {/* TODO 404 */}
     <Link to={"/tkaniny/" + fabric.slug}>
       <Img fluid={fabric.images[0].fluid} />
     </Link>
