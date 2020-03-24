@@ -11,7 +11,7 @@ export default ({ data: { about } }) => (
         <link rel="canonical" href="https://falda.pl/o_nas" />
       </HelmetDatoCms>
       <h1>{about.title}</h1>
-      <p>{about.subtitle}</p>
+      {/* TODO */}
       {/* <div className="sheet__gallery">
           <img src={about.photo.url} />
         </div> */}
