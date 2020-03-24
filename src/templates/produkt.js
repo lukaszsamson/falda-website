@@ -52,9 +52,9 @@ export default ({ data }) => {
                   data.datoCmsProduct.descriptionNode.childMarkdownRemark.html,
               }}
             />
-          </section>
-          <section>
-            <h2>Skład</h2>
+            <h3>Długość</h3>
+            <p>{data.datoCmsProduct.length}<small>cm</small></p>
+            <h3>Skład</h3>
             {data.datoCmsProduct.build.map(part => (
               <article key={part.name}>
                 <h4>{part.name}</h4>
@@ -113,6 +113,7 @@ export const query = graphql`
       name
       code
       price
+      length
       descriptionNode {
         childMarkdownRemark {
           html
