@@ -32,7 +32,6 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
-      subtitle
       photo {
         url
       }
