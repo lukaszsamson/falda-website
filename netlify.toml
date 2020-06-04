@@ -3,3 +3,6 @@
   to = "https://falda.pl/:splat"
   status = 301
   force = true
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
